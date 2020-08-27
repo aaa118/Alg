@@ -4,6 +4,7 @@ import java.util.*;
 
 class SubSequence {
     public static void main(String[] args) {
+
         List<Integer> array = new ArrayList<>();
         List<Integer> sequence = new ArrayList<>();
 //        int[] array1 = {5, 1, 22, 25, 6, -1, 8, 10};
@@ -65,6 +66,7 @@ class SubSequence {
         // Write your code here.
         int arrayIndex = 0;
         int sequenceIndex = 0;
+
 
         while(arrayIndex < array.size()) {
             if (sequence.get(sequenceIndex).equals(array.get(arrayIndex))) {
