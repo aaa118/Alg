@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Arrays;
+
 public class BinaryTree {
 
     Node root;
@@ -132,18 +134,22 @@ public class BinaryTree {
     public static void main(String[] args) {
 
         BinaryTree theTree = new BinaryTree();
-
-        theTree.addNode(50, "Boss");
-
-        theTree.addNode(25, "Vice President");
-
+        theTree.addNode(10, "Boss");
+        theTree.addNode(5, "Vice President");
         theTree.addNode(15, "Office Manager");
+        theTree.addNode(2, "Secretary");
+        theTree.addNode(5, "Sales Manager");
+        theTree.addNode(13, "Salesman 1");
+        theTree.addNode(22, "Salesman 1");
+        theTree.addNode(1, "Salesman 1");
+        theTree.addNode(14, "Salesman 1");
+        theTree.addNode(12, "Salesman 1");
 
-        theTree.addNode(30, "Secretary");
+        int[] test = new int[] {1,2,4};
+        System.out.println(Arrays.toString(test));
 
-        theTree.addNode(75, "Sales Manager");
 
-        theTree.addNode(85, "Salesman 1");
+
 
         // Different ways to traverse binary trees
 
@@ -160,33 +166,30 @@ public class BinaryTree {
         System.out.println(theTree.findNode(75));
 
     }
+    static class Node {
+        int key;
+        String name;
+
+        Node leftChild;
+        Node rightChild;
+
+        Node(int key, String name) {
+            this.key = key;
+            this.name = name;
+
+        }
+
+        public String toString() {
+            return name + " has the key " + key;
+
+            /*
+             * return name + " has the key " + key + "\nLeft Child: " + leftChild +
+             * "\nRight Child: " + rightChild + "\n";
+             */
+
+        }
+    }
 }
 
-class Node {
 
-    int key;
-    String name;
-
-    Node leftChild;
-    Node rightChild;
-
-    Node(int key, String name) {
-
-        this.key = key;
-        this.name = name;
-
-    }
-
-    public String toString() {
-
-        return name + " has the key " + key;
-
-        /*
-         * return name + " has the key " + key + "\nLeft Child: " + leftChild +
-         * "\nRight Child: " + rightChild + "\n";
-         */
-
-    }
-
-}
 
