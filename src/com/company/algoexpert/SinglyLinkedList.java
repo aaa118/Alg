@@ -1,4 +1,4 @@
-package com.company;
+package com.company.algoexpert;
 
 public class SinglyLinkedList {
     private Node head;

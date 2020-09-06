@@ -1,4 +1,4 @@
-package com.company;
+package com.company.algoexpert;
 
 import java.util.Arrays;
 

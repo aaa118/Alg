@@ -1,4 +1,4 @@
-package com.company;
+package com.company.algoexpert;
 
 public class LinkedList {
     public static void main(String[] args) {

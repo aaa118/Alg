@@ -1,4 +1,4 @@
-package com.company;
+package com.company.algoexpert;
 
 public class LinkedListTest {
     Node1 head;
