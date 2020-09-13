@@ -1,5 +1,7 @@
 package com.company.algoexpert;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.*;
 
 class SubSequence {
@@ -19,9 +21,18 @@ class SubSequence {
             sequence.add(text);
         }
 
-        boolean value = isValidSubsequence(array, sequence);
-        System.out.println(value);
+//        boolean value = isValidSubsequence(array, sequence);
+//        System.out.println(value);
+        int three = 3;
+        double test = (double) 3 / 6;
+        DecimalFormat df = new DecimalFormat("#.#####");
+        df.setRoundingMode(RoundingMode.CEILING);
+        String t1 = df.format(test);
+
+//        System.out.println(t1);
+
     }
+
 
 
     public static boolean isValidSubsequence2(List<Integer> array, List<Integer> sequence) {
@@ -29,7 +40,7 @@ class SubSequence {
         int arrayIndex = 0;
         int sequenceIndex = 0;
 
-        while(arrayIndex < array.size()) {
+        while (arrayIndex < array.size()) {
             if (sequence.get(sequenceIndex).equals(array.get(arrayIndex))) {
                 sequenceIndex++;
             }
@@ -68,7 +79,7 @@ class SubSequence {
         int sequenceIndex = 0;
 
 
-        while(arrayIndex < array.size()) {
+        while (arrayIndex < array.size()) {
             if (sequence.get(sequenceIndex).equals(array.get(arrayIndex))) {
                 sequenceIndex++;
             }
@@ -85,7 +96,7 @@ class SubSequence {
         int arrayIndex = 0;
         int sequenceIndex = 0;
 
-        while(arrayIndex < array.size()) {
+        while (arrayIndex < array.size()) {
             if (sequence.get(sequenceIndex).equals(array.get(arrayIndex))) {
                 sequenceIndex++;
             }
