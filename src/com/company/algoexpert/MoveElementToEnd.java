@@ -9,7 +9,7 @@ public class MoveElementToEnd {
 
     public static void main(String[] args) {
 //        int[] inputArray = {-1, 5, 10, 20, 3};
-        Integer[] inputArray2 = {26, 134, 135, 15, 17};
+        Integer[] inputArray2 = {5, 5, 5, 5, 5, 5, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12};
         List<Integer> integers = Arrays.asList(inputArray2);
 
 //        List<Integer> integers = new ArrayList<>();
@@ -22,15 +22,15 @@ public class MoveElementToEnd {
 //        integers.add(4);
 //        integers.add(2);
 //        findThreeLargestNumbers(inputArray);
-        System.out.println(moveElementToEnd(integers, 2));
+        System.out.println(moveElementToEnd(integers, 5));
     }
 
     public static List<Integer> moveElementToEnd(List<Integer> array, int toMove) {
         // Write your code here.
 
-        for (int i = 1; i < array.size(); i++) {
+        for (int i = 0; i < array.size() - 1; i++) {
             if (array.get(i) != toMove) {
-                sway(array, i, i - 1);
+                sway(array, i, i + 1);
                 int j = i;
                 while(j > 0) {
                     if (j - 2 > 0 && array.get(j - 2) == toMove) {
