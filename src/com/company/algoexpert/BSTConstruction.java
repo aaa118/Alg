@@ -19,20 +19,42 @@ public class BSTConstruction {
             this.value = value;
         }
 
+//        public BST insert(int value) {
+//            if (value < this.value) {
+//                if (left == null) {
+//                    left = new BST(value);
+//                } else {
+//                    left.insert(value);
+//                }
+//            } else {
+//                if (right == null) {
+//                    right = new BST(value);
+//                } else {
+//                    right.insert(value);
+//                }
+//            }
+//            return this;
+//        }
+
+
         public BST insert(int value) {
-            if (value < this.value) {
-                if (left == null) {
-                    left = new BST(value);
+            // Write your code here.
+            BST cuN = this;
+            if (value < cuN.value) {
+                if(cuN.left == null) {
+                    cuN.left = new BST(value);
                 } else {
-                    left.insert(value);
+                    cuN = cuN.left;
                 }
             } else {
-                if (right == null) {
-                    right = new BST(value);
+                if(cuN.right == null) {
+                    cuN.right = new BST(value);
                 } else {
-                    right.insert(value);
+                    cuN = cuN.right;
                 }
             }
+
+            // Do not edit the return statement of this method.
             return this;
         }
     }
