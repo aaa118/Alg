@@ -1,12 +1,12 @@
 package com.company.algoexpert;
 
-public class LinkedList {
+public class LinkedListDemo {
     public static void main(String[] args) {
-        LinkedList list = new LinkedList();
-        list.head = new LinkedList.Node(85);
-        list.head.next = new LinkedList.Node(15);
-        list.head.next.next = new LinkedList.Node(4);
-        list.head.next.next.next = new LinkedList.Node(20);
+        LinkedListDemo list = new LinkedListDemo();
+        list.head = new LinkedListDemo.Node(85);
+        list.head.next = new LinkedListDemo.Node(15);
+        list.head.next.next = new LinkedListDemo.Node(4);
+        list.head.next.next.next = new LinkedListDemo.Node(20);
     }
 
 
