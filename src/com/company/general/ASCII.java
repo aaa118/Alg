@@ -10,7 +10,10 @@ public class ASCII {
 
         String b = "zyx";
 //        System.out.println((int) 'a');
-        System.out.println(b.charAt(1) + 1);
+        System.out.println( (int) b.charAt(1));
+        System.out.println(b.length());
+        System.out.println(b.substring(0, 3));
+        System.out.println(b.subSequence(0, 2));
     }
 
     public static String caesarCypherEncryptor(String str, int key) {
