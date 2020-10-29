@@ -7,10 +7,9 @@ public class ASCII {
 //        char b = 99;
 
 
-
         String b = "zyx";
 //        System.out.println((int) 'a');
-        System.out.println( (int) b.charAt(1));
+        System.out.println((int) b.charAt(1));
         System.out.println(b.length());
         System.out.println(b.substring(0, 3));
         System.out.println(b.subSequence(0, 2));
