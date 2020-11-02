@@ -21,6 +21,8 @@ class SubSequence {
             sequence.add(text);
         }
 
+        System.out.println(Arrays.toString(array1));
+
 //        boolean value = isValidSubsequence(array, sequence);
 //        System.out.println(value);
         int three = 3;
