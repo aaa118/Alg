@@ -5,6 +5,7 @@ public class AlienDictionary {
     public static void main(String[] args) {
 
     }
+
     public static boolean isAlienSorted(String[] words, String order) {
         int[] index = new int[26];
         for (int i = 0; i < order.length(); ++i)
@@ -28,6 +29,26 @@ public class AlienDictionary {
             // If we didn't find a first difference, the
             // words are like ("app", "apple").
             if (word1.length() > word2.length())
+                return false;
+        }
+
+        return true;
+    }
+
+    public boolean isAlienSorted2(String[] words, String order) {
+        int len = words.length;
+        for (int i = 0; i < len - 1; i++) {
+            int worlen1 = words[i].length();
+            int worlen2 = words[i + 1].length();
+            int worlen = worlen1 > worlen2 ? worlen2 : worlen1;
+            for (int j = 0; j < worlen; j++) {
+                int curr = order.indexOf(words[i].charAt(j));
+                int next = order.indexOf(words[i + 1].charAt(j));
+                if (curr < next) break;
+                else if (curr == next) continue;
+                else if (curr > next) return false;
+            }
+            if (order.indexOf(words[i].charAt(worlen - 1)) == order.indexOf(words[i + 1].charAt(worlen - 1)) && worlen1 > worlen2)
                 return false;
         }
 
