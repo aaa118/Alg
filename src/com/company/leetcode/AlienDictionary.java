@@ -5,7 +5,8 @@ public class AlienDictionary {
     public static void main(String[] args) {
         String[] words = {"word","world","row"};
         String order = "worldabcefghijkmnpqstuvxyz";
-        String[] words2 = {"hello","leetcode"};
+//        String[] words2 = {"hello","leetcode"};
+        String[] words2 = {"hello","hello"};
         String order2 = "hlabcdefgijkmnopqrstuvwxyz";
 
         System.out.println(isAlienSorted2(words, order));
@@ -54,6 +55,7 @@ public class AlienDictionary {
                 if (curr < next) break;
                 else if (curr == next) {
                     // Do Nothing
+
 
                 }
                 else return false;
