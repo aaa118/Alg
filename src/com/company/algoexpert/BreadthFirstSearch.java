@@ -9,8 +9,9 @@ public class BreadthFirstSearch {
 
 
     public static void main(String[] args) {
-        
+
     }
+
     // Do not edit the class below except
     // for the breadthFirstSearch method.
     // Feel free to add new properties
@@ -28,7 +29,7 @@ public class BreadthFirstSearch {
             Queue<Node> q = new LinkedList<Node>();
             q.add(this);
             List<String> array1 = new ArrayList<>();
-            while(!q.isEmpty()) {
+            while (!q.isEmpty()) {
                 Node current = q.poll();
                 array1.add(current.name);
                 q.addAll(current.children);
