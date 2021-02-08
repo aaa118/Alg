@@ -1,4 +1,4 @@
-package com.company.hackerRank;
+package com.company.hackerRank.java;
 
 public class Staircase {
     public static void main(String[] args) {
