@@ -35,17 +35,21 @@ public class GradingStudents {
 //    }
 
     public static void main(String[] args) {
-        List<Integer> result = new ArrayList<>();
-        result.add(73);
-        result.add(67);
-        result.add(38);
-        result.add(33);
+//        List<Integer> result = new ArrayList<>();
+//        result.add(73);
+//        result.add(67);
+//        result.add(38);
+//        result.add(33);
 
-        System.out.println(gradingStudents(result));
+//        System.out.println(gradingStudents(result));
+int[] numbers = new int[10];
+        System.out.println("apple".compareTo("banana"));
     }
 
     public static List<Integer> gradingStudents(List<Integer> grades) {
         List<Integer> finalList = new ArrayList<>();
+        List list = new ArrayList();
+//        list.add()
         for (int num : grades) {
             if (num > 37 && num % 5 >= 3) {
                 finalList.add(((num / 5) + 1) * 5);
