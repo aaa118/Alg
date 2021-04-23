@@ -5,9 +5,12 @@ class TheBirthdayBar {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            val arrayOfDates = arrayOf(1, 2, 1, 3, 2)
-            val d = 3
-            val m = 2
+//            val arrayOfDates = arrayOf(1, 2, 1, 3, 2)
+            val arrayOfDates = arrayOf(2, 5, 1, 3, 4, 4, 3, 5, 1, 1, 2, 1, 4, 1, 3, 3, 4, 2, 1)
+//            val d = 3
+//            val m = 2
+            val d = 18
+            val m = 7
 
             println(birthday(arrayOfDates, d, m))
 
@@ -23,24 +26,22 @@ class TheBirthdayBar {
                     }
                 }
 
-                var len = i + 1
+                var len = 1
                 var index = i
-                while (len < m) {
-                    var rSum = s[index]
+                var rSum = s[index]
+                while (len < m && index < s.size - 1 && rSum < d) {
                     val sum = s[index + 1] + rSum
                     len++
                     if (sum == d && len == m) {
                         counter++
-                        continue
                     }
                     index++
                     rSum = sum
                 }
+                len = 1
 
             }
-
             return counter
-
         }
     }
 
