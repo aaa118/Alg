@@ -17,31 +17,48 @@ class TheBirthdayBar {
         }
 
 
-        private fun birthday(s: Array<Int>, d: Int, m: Int): Int {
-            var counter = 0
-            for (i in s.indices) {
-                if (m == 1) {
-                    if (s[i] == d) {
-                        counter++
-                    }
-                }
+//        private fun birthday(s: Array<Int>, d: Int, m: Int): Int {
+//            var counter = 0
+//            for (i in s.indices) {
+//                if (m == 1) {
+//                    if (s[i] == d) {
+//                        counter++
+//                    }
+//                }
+//
+//                var len = 1
+//                var index = i
+//                var rSum = s[index]
+//                while (len < m && index < s.size - 1 && rSum < d) {
+//                    val sum = s[index + 1] + rSum
+//                    len++
+//                    if (sum == d && len == m) {
+//                        counter++
+//                    }
+//                    index++
+//                    rSum = sum
+//                }
+//                len = 1
+//
+//            }
+//            return counter
+//        }
 
-                var len = 1
-                var index = i
-                var rSum = s[index]
-                while (len < m && index < s.size - 1 && rSum < d) {
-                    val sum = s[index + 1] + rSum
-                    len++
-                    if (sum == d && len == m) {
-                        counter++
-                    }
-                    index++
-                    rSum = sum
-                }
-                len = 1
-
+        fun birthday(s: Array<Int>, d: Int, m: Int): Int {
+            var sum = 0
+            var ways = 0
+            for (i in 0 until m) {
+                sum += s[i]
             }
-            return counter
+            for (i in 0 until s.size - m + 1) {
+                if (sum == d) {
+                    ways++
+                }
+                if (i + m < s.size) {
+                    sum = sum - s[i] + s[i + m]
+                }
+            }
+            return ways
         }
     }
 
