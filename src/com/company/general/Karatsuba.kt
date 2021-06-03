@@ -12,18 +12,19 @@ class Karatsuba {
         }
 
         private fun karatsubaMulti(number1: Int, number2: Int): Int {
-            val num1HalfLength = number1.length() / 2
-            if (num1HalfLength == 1) {
+            val numFullLength = number2.length()
+            if (numFullLength == 1) {
                 return number1 * number2
             }
-            val num2HalfLength = number2.length()
-            val tenPowerOfHalfLength = 10.0.pow(num1HalfLength).toInt()
-            val tenPowerOfFullLength = 10.0.pow(num2HalfLength).toInt()
+            val numHalfLength = number1.length() / 2
+            val tenPowerOfHalfLength = 10.0.pow(numHalfLength).toInt()
+            val tenPowerOfFullLength = 10.0.pow(numFullLength).toInt()
             val a = number1 / tenPowerOfHalfLength
             val b = number1 % tenPowerOfHalfLength
             val c = number2 / tenPowerOfHalfLength
             val d = number2 % tenPowerOfHalfLength
-            return (tenPowerOfFullLength * (a * c)) + (tenPowerOfHalfLength * ((a * d) + (b * c))) + (b * d)
+            return (tenPowerOfFullLength * karatsubaMulti(a, c)) +
+                    (tenPowerOfHalfLength * (karatsubaMulti(a, d) + karatsubaMulti(b, c))) + karatsubaMulti(b, d)
 
         }
 
