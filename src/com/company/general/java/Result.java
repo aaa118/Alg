@@ -1,14 +1,38 @@
-package com.company.general;
+package com.company.general.java;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
-
+import java.util.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
-public class Solution1 {
+
+class Result {
+
+    /*
+     * Complete the 'slowestKey' function below.
+     *
+     * The function is expected to return a CHARACTER.
+     * The function accepts 2D_INTEGER_ARRAY keyTimes as parameter.
+     */
+
+    public static char slowestKey(List<List<Integer>> keyTimes) {
+        // Write your code here
+        char a = 0;
+
+//        for (int i : keyTimes.get(keytime.size())) {
+//            if (i ==0 ) {
+//                int start = 0;
+//            }
+//        }
+        System.out.println(keyTimes);
+
+        return a;
+
+    }
+
+}
+class Solution {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
@@ -21,7 +45,8 @@ public class Solution1 {
         IntStream.range(0, keyTimesRows).forEach(i -> {
             try {
                 keyTimes.add(
-                        Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+                        Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").
+                                split(" "))
                                 .map(Integer::parseInt)
                                 .collect(toList())
                 );
@@ -30,7 +55,7 @@ public class Solution1 {
             }
         });
 
-        char result = SlowestKey.slowestKey(keyTimes);
+        char result = Result.slowestKey(keyTimes);
 
         bufferedWriter.write(String.valueOf(result));
         bufferedWriter.newLine();

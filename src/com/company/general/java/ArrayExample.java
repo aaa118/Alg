@@ -1,4 +1,4 @@
-package com.company.general;
+package com.company.general.java;
 
 public class ArrayExample {
 

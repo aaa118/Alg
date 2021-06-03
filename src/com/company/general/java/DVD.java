@@ -1,4 +1,4 @@
-package com.company.general;
+package com.company.general.java;
 
 // A simple definition for a DVD.
 public class DVD {
