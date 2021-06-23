@@ -14,7 +14,8 @@ class CountSplitInversions {
 
             val lines: List<String> = File(fileName).readLines()
 
-            val list = mutableListOf<BigInteger>()
+            val listBigINt = mutableListOf<BigInteger>()
+            val list = mutableListOf<Int>()
 
             val arr = LongArray(100000)
             lines.forEach { line ->
@@ -25,8 +26,8 @@ class CountSplitInversions {
 
 //                println(line)
 
-                list.add(line.toBigInteger())
-
+                listBigINt.add(line.toBigInteger())
+                list.add(line.toInt())
             }
 //            println(list.toString())
 //            val arr = list.toIntArray()
@@ -44,7 +45,8 @@ class CountSplitInversions {
 
 
 //            println(mergeSortAndCount(arr, 0, arr.size - 1))
-            println(mergeSortAndCount(list, 0, list.size - 1))
+//            println(mergeSortAndCount(list, 0, list.size - 1))
+            println(countSubArrayInv(listBigINt, 0, listBigINt.size - 1))
 //            println(getInvCount(arr.size - 1, arr))
         }
 
@@ -52,6 +54,40 @@ class CountSplitInversions {
             var inv_count = 0
             for (i in 0 until n - 1) for (j in i + 1 until n) if (arr.get(i) > arr.get(j)) inv_count++
             return inv_count
+        }
+
+        fun countSubArrayInv(array: MutableList<BigInteger>, start: Int, end: Int): Int {
+            if (end - start <= 1) return 0
+            val middle = start + (end - start) / 2
+            val leftInversions = countSubArrayInv(array, start, middle)
+            val rightInversions = countSubArrayInv(array, middle, end)
+            val mergedArrayInv = mergeSortCountInv(array, start, middle, end)
+            return leftInversions + rightInversions + mergedArrayInv
+        }
+
+        fun mergeSortCountInv(array: MutableList<BigInteger>, start: Int, middle: Int, end: Int): Int {
+            val sortedArray = mutableListOf<BigInteger>()
+            var left = start
+            var right = middle
+            var inversions = 0
+
+            while (left < middle && right < end) {
+                if (array[left] <= array[right]) {
+                    sortedArray.add(array[left])
+                    left += 1
+                } else {
+                    inversions += middle - left
+                    sortedArray.add(array[right])
+                    right += 1
+                }
+            }
+            sortedArray += array.subList(left, middle) + array.subList(right, end)
+            for (idx in 0 until sortedArray.size) {
+                val num = sortedArray[idx]
+                array[start+ idx] = num
+            }
+
+            return inversions
         }
 
 
@@ -82,6 +118,8 @@ class CountSplitInversions {
             while (j < right.size) arr[k++] = right[j++]
             return swaps
         }
+
+
 
         // Merge sort function
         private fun mergeSortAndCount(arr: MutableList<BigInteger>, l: Int,
