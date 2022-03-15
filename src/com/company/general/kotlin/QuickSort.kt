@@ -10,6 +10,7 @@ class QuickSort {
 //        int[] inputArray = {8, 5, 2, 9, 6, 3};
             val inputArray = intArrayOf(8, 5, 2, 9, 7, 6, 3)
 
+
             println(quickSort(inputArray.toList() as MutableList<Int>, 0, inputArray.size - 1))
         }
 
