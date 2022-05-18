@@ -11,7 +11,6 @@ class ShiftArray {
         }
 
         private fun shiftArray(array: IntArray, n: Int): List<Int> {
-
             var n1 = n
             while (n1 > 0) {
                 for (i in array.size - 1 downTo 1) {
