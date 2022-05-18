@@ -1,4 +1,4 @@
-package com.company.leetcode;
+package com.company.leetcode.java;
 
 /**
  * Find Numbers with Even Number of Digits

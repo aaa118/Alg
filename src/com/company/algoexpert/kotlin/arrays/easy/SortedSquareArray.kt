@@ -1,6 +1,4 @@
-package com.company.algoexpert.kotlin
-
-import kotlin.math.abs
+package com.company.algoexpert.kotlin.arrays.easy
 
 class SortedSquareArray {
     companion object {
