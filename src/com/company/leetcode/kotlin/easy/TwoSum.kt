@@ -12,7 +12,7 @@ class TwoSum {
         }
 
 
-        fun twoSum(nums: IntArray, target: Int): IntArray {
+        private fun twoSum(nums: IntArray, target: Int): IntArray {
             val solMap = mutableMapOf<Int, Int>()
             for (i in nums.indices) {
                 val diff = target - nums[i]
