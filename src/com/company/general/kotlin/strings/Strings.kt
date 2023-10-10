@@ -1,4 +1,4 @@
-package com.company.general.kotlin
+package com.company.general.kotlin.strings
 
 class Strings {
 
