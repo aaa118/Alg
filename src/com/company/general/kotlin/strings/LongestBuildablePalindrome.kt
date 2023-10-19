@@ -1,20 +1,19 @@
 package com.company.general.kotlin.strings
 
-class LongestBuildablePalindrome {
-    /*
-    Write a function that will generate one of the longest possible palindromes buildable from the characters within a given string
+/*
+Write a function that will generate one of the longest possible palindromes buildable from the characters within a given string
 
-    For example:
-    abczyx => a (any one of the characters would have been fine)
-    bbaac => abcba
-    aabbcc => abccba
-    bbbbbaac  => bbacabb
-    */
+For example:
+abczyx => a (any one of the characters would have been fine)
+bbaac => abcba
+aabbcc => abccba
+bbbbbaac  => bbacabb
+*/
+class LongestBuildablePalindrome {
     companion object {
 
         @JvmStatic
         fun main(args: Array<String>) {
-
             println(longestPalindrome("bbbbbaac"))
             println(longestPalindrome("aabbcc"))
             println(longestPalindrome("bbaac"))
@@ -24,7 +23,6 @@ class LongestBuildablePalindrome {
             println(largestPalindrome("aabbcc"))
             println(largestPalindrome("bbaac"))
             println(largestPalindrome("abczyx"))
-
         }
 
         private fun longestPalindrome(string: String): String {
@@ -43,9 +41,7 @@ class LongestBuildablePalindrome {
                 stringBuilder.append(hashSet.first().toString())
             }
             val length = stringBuilder.length
-
             val finalString = StringBuilder(stringBuilder.length)
-
 
             var i = 0
             while (i < length) {
@@ -57,14 +53,14 @@ class LongestBuildablePalindrome {
             var j = length - 1
             while (j > 0) {
                 if (j % 2 != 0) {
-                    finalString.append(stringBuilder[j ])
+                    finalString.append(stringBuilder[j])
                 }
                 j--
             }
             return finalString.toString()
         }
 
-        fun largestPalindrome(string: String): String {
+        private fun largestPalindrome(string: String): String {
             val pairedChars = mutableListOf<Char>()
             val stringAsChars = string.toCharArray()
             val leftoverChars = string.toMutableList()
@@ -104,11 +100,5 @@ class LongestBuildablePalindrome {
         }
     }
 
-    fun String.addCharAtIndex(char: Char, index: Int) =
-        StringBuilder(this).apply { insert(index, char) }.toString()
-
 
 }
-
-fun String.addCharAtIndex(char: Char, index: Int) =
-    StringBuilder(this).apply { insert(index, char) }.toString()
