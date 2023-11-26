@@ -12,10 +12,10 @@ class PalindromicSubStrings {
             println(countSubstrings("aaa"))
         }
 
-        val arrayOfString = mutableListOf<String>()
-        var pString = ""
+        private val arrayOfString = mutableListOf<String>()
+        private var pString = ""
 
-        fun countSubstrings(s: String): Int {
+        private fun countSubstrings(s: String): Int {
             for (i in s.indices) {
                 checkP(i, i, s)
                 checkP(i, i + 1, s)

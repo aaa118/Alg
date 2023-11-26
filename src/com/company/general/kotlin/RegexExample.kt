@@ -1,16 +1,45 @@
 package com.company.general.kotlin
 
-class Regex {
-
+/**
+ * \d Represents any number
+ * \D Represents anything but a number
+ * \s Represents any space
+ * \S Anything but a space
+ * \w Any character
+ * \W Any but a character
+ * \. Any character but a line break
+ * \b Matches a space which precedes a whole word.
+ *
+ * ? 0 or 1 repetitions
+ * * 0 or more repetitions
+ * {n} e.g. \d{1,5} Expect between 1 and 5 digits in the row.
+ */
+class RegexExample {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
 
             //            println(log())
 
-            "cats AND*Dogs-are Awesome"
+            var string1 = "cat cat AND*Dogs-are Awesome"
+            var string2 = "cat cat 11D*Dogs-are Awesome"
+            var string3 = "cat cat 11D*Dogs-are Awesome"
+            var dollar = "$100.00"
+            var regexDollar = Regex("""\$\d*\.\d{2}""")
 
-            println(LogDumpGetUnique())
+//            var regex = """cat\\/i""".toRegex()
+            var regex = """cat""".toRegex(RegexOption.IGNORE_CASE)
+
+            var regex1 = Regex("""\d""")
+            var regex2 = Regex("""Jennifer\s\w+\s""")
+
+//            var .pattern = /w3schools/i
+
+
+            var res = dollar.contains(regexDollar)
+            println(res)
+
+//            println(LogDumpGetUnique())
 
         }
 
