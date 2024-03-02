@@ -61,15 +61,16 @@ class EncodeAndDecodeStrings {
         @JvmStatic
         fun main(args: Array<String>) {
 
-            var list = mutableListOf("Hello", "World")
-            var string = encode(list)
+//            val list = mutableListOf("Hello", "World")
+            val list = mutableListOf("we", "say", ":", "yes")
+            val string = encode(list)
             println(decode(string))
 
 
         }
 
         // Encodes a list of strings to a single string.
-        fun encode(strs: List<String>): String {
+        private fun encode(strs: List<String>): String {
             val delimiter = "#"
             val resultString = StringBuilder()
             for (string in strs) {
@@ -79,9 +80,9 @@ class EncodeAndDecodeStrings {
         }
 
         // Decodes a single string to a list of strings.
-        fun decode(s: String): List<String> {
+        private fun decode(s: String): List<String> {
             val delimiter = "#"
-            var finalList:MutableList<String> = emptyList<String>().toMutableList()
+            val finalList:MutableList<String> = emptyList<String>().toMutableList()
 
             // Valid List should always start with the index
             var startIndexOfStringLength = 0
