@@ -51,9 +51,11 @@ import java.lang.StringBuilder
  * strs[i] contains any possible characters out of 256 valid ASCII characters.
  *
  * https://www.lintcode.com/problem/659/
- *
+ */
+
+
+ /**
  * Solution:
- *
  */
 class EncodeAndDecodeStrings {
 
