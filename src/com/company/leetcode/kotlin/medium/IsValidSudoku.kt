@@ -8,6 +8,9 @@ class IsValidSudoku {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
+
+            var q = ArrayDeque<Pair<Int, Int>>()
+
             val board1 = arrayOf(charArrayOf('5', '3', '.', '.', '7', '.', '.', '.', '.'), charArrayOf('5', '3', '.', '.', '7', '.', '.', '.', '.'), )
 //            val board2 =
 //                [
@@ -23,7 +26,12 @@ class IsValidSudoku {
 //                ]
             println(isValidSudoku(board1))
         }
-
+        fun bfs(r: Int, c: Int, grid: Array<IntArray>, q: ArrayDeque<Pair<Int, Int>>) {
+            if (r < 0 || r >= grid.size || c < 0 || c >= grid[0].size || grid[r][c] == 0 || grid[r][c] == 2) {
+                return
+            }
+            q.add(Pair(r, c))
+        }
         private fun isValidSudoku(board: Array<CharArray>): Boolean {
             val col: Array<MutableSet<Char>> = Array(9) { hashSetOf() }
             val row: Array<MutableSet<Char>> = Array(9) { hashSetOf() }

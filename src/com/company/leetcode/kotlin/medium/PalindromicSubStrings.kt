@@ -1,5 +1,7 @@
 package com.company.leetcode.kotlin.medium
 
+import java.util.*
+
 /**
  * 647. Palindromic Substrings
  * https://leetcode.com/problems/palindromic-substrings/
@@ -16,6 +18,8 @@ class PalindromicSubStrings {
         private var pString = ""
 
         private fun countSubstrings(s: String): Int {
+            val stack = Stack<String>()
+            stack.empty()
             for (i in s.indices) {
                 checkP(i, i, s)
                 checkP(i, i + 1, s)

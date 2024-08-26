@@ -8,7 +8,6 @@ class TwoSum {
             val intArray = intArrayOf(2,7,11,15)
             val target = 9
             println(twoSum(intArray, target).toList().toString())
-
         }
 
 
