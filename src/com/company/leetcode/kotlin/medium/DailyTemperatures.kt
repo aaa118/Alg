@@ -10,7 +10,14 @@ class DailyTemperatures {
 
             val nums = intArrayOf(73,74,75,71,69,72,76,73)
 
-            println(dailyTemperatures(nums).asList())
+            var map = mutableMapOf<String, MutableList<Pair<String, Int>>>()
+            map["123"] = mutableListOf<Pair<String, Int>>()
+            map["123"]?.add(Pair("rtr", 12))
+            map["123"]?.add(Pair("rtr22", 12))
+
+            println(map["123"]?.first())
+
+            println(dailyTemperatures1(nums).asList())
         }
 
         private fun dailyTemperatures(temperatures: IntArray): IntArray {
@@ -27,5 +34,32 @@ class DailyTemperatures {
             }
             return resultantArray
         }
+
+        fun dailyTemperatures1(temperatures: IntArray): IntArray {
+            val stack : Stack<Pair<Int, Int>> = Stack<Pair<Int, Int>>()
+
+
+            var res = IntArray(temperatures.size)
+
+            for (i in 0 until temperatures.size - 1) {
+                if (temperatures[i] < temperatures[i + 1]) {
+                    res[i] = 1
+                } else {
+                    stack.add(Pair(i, temperatures[i]))
+                }
+                while (stack.isNotEmpty() && stack.peek().second < temperatures[i + 1]) {
+                    val top = stack.pop()
+                    if (temperatures[i] < temperatures[i + 1]) {
+                        res[top.first] = i + 1 - top.first
+                    } else {
+                        break
+                    }
+                }
+
+            }
+            return res
+        }
+
+
     }
 }
