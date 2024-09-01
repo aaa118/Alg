@@ -1,4 +1,4 @@
-package com.company.general.kotlin
+package com.company.general.kotlin.arrays
 
 class QuickSort {
 
@@ -19,12 +19,12 @@ class QuickSort {
             var pivotIndex = startIndex
 
 
-            for (i in unsortedList.indices) {
-                val num = unsortedList[i]
+            for (index in unsortedList.indices) {
+                val num = unsortedList[index]
                 val pivotNum = unsortedList[pivotIndex]
                 if (num < pivotNum) {
-                    swap(i, pivotIndex, unsortedList)
-                    pivotIndex = i
+                    swap(index, pivotIndex, unsortedList)
+                    pivotIndex = index
                 }
             }
             println(unsortedList)

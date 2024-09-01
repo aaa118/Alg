@@ -34,7 +34,7 @@ class LongestPalindrome {
             return lS
         }
 
-        fun checkP(sS: String): Boolean {
+        private fun checkP(sS: String): Boolean {
             var j = sS.length - 1
             var i = 0
             while (i < j) {
@@ -48,11 +48,11 @@ class LongestPalindrome {
             return true
         }
 
-        fun longestPalindromicSubstring2(string: String): String {
+        private fun longestPalindromicSubstring2(string: String): String {
             // Write your code here.
             var lS = Pair(0, 1)
             var l = ""
-            for (i in 0 until string.length) {
+            for (i in string.indices) {
                 val b1 = checkP(i - 1, i + 1, string)
                 if (b1.second - lS.second > 0 && b1.first - lS.first > 0) {
                     l = string.substring(b1.first + 1, b1.second)
@@ -65,7 +65,7 @@ class LongestPalindrome {
             return l
         }
 
-        fun checkP(i: Int, j: Int, string: String): Pair<Int, Int> {
+        private fun checkP(i: Int, j: Int, string: String): Pair<Int, Int> {
             if (i < 0) return Pair(0, 0)
             var _i = i
             var _j = j

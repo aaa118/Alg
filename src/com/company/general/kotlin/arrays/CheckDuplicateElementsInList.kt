@@ -1,4 +1,4 @@
-package com.company.general.kotlin
+package com.company.general.kotlin.arrays
 
 class CheckDuplicateElementsInList {
 
@@ -36,11 +36,11 @@ class CheckDuplicateElementsInList {
 // var j = 0
 // var i = 0
 
-            var hashMap = mutableMapOf<Int, Int>()
+            val hashMap = mutableMapOf<Int, Int>()
 
             for (i in array1) {
                 if (hashMap.contains(i)) {
-                    var value = hashMap[i]
+                    val value = hashMap[i]
                     if (value != null) hashMap[i] = value + 1
                 } else {
                     hashMap[i] = 1
@@ -50,7 +50,7 @@ class CheckDuplicateElementsInList {
 
             for (j in array2) {
                 if (hashMap.contains(j)) {
-                    var value = hashMap[j]
+                    val value = hashMap[j]
                     if (value != 0) dupList.add(j)
                     if (value != null) hashMap[j] = value - 1
                 }

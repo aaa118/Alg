@@ -22,7 +22,7 @@ class FindClosestValueInBST {
         }
 
 
-        fun findClosestValueInBst(tree: BST, target: Int): Int {
+        private fun findClosestValueInBst(tree: BST, target: Int): Int {
             return findClosestValueInBstH(tree, target)
         }
         // Write your code here.
