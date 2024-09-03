@@ -1,4 +1,4 @@
-package com.company.leetcode.kotlin.medium
+package com.company.leetcode.kotlin.arrays.medium
 
 import java.lang.StringBuilder
 
@@ -64,7 +64,7 @@ class EncodeAndDecodeStrings {
         fun main(args: Array<String>) {
 
 //            val list = mutableListOf("Hello", "World")
-            val list = mutableListOf("we", "say", ":", "yes")
+            val list = mutableListOf("we", "say#2td", ":", "yes")
             val string = encode(list)
             println(decode(string))
 
