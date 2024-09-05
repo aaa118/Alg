@@ -1,5 +1,7 @@
 package com.company.leetcode.kotlin.medium.backtrack
 
+import java.util.*
+
 
 class CombinationSum {
 
@@ -9,11 +11,14 @@ class CombinationSum {
             var array = intArrayOf(2,3,6,7)
             var array2 = intArrayOf(2,5,2,1,2)
             println(combinationSum2(array2, 5))
+            println('4' - '0')
 
         }
         fun combinationSum(candidates: IntArray, target: Int): List<List<Int>> {
             var res = mutableListOf<List<Int>>()
             var curr = mutableListOf<Int>()
+            var q = LinkedList<Int>()
+            q.peekFirst()
 
             fun dfs(i: Int, cur: MutableList<Int>, total: Int) {
                 if (total == target) {
