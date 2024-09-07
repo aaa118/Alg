@@ -1,12 +1,13 @@
-package com.company.leetcode.kotlin.medium.string
+package com.company.leetcode.kotlin.arrayandstrings
 
 import java.util.*
-import kotlin.Comparator
 import kotlin.collections.HashMap
 import kotlin.math.max
 
 class ReorganizeString {
     companion object {
+
+
 
     }
     fun reorganizeString(s: String): String {
@@ -17,6 +18,7 @@ class ReorganizeString {
             if (charsCount[s[i]]!! > maxCount) {
                 maxCount = charsCount[s[i]]!!
             }
+            s[i].isDigit()
         }
         val linkedL = LinkedList<IntArray>()
         linkedL.last[1]
