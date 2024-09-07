@@ -16,13 +16,13 @@ class MinimumWindowSubstring {
             println(minWindow("a", "a"))
         }
 
-        fun minWindow(s: String, t: String): String {
-            var mapt = mutableMapOf<Char, Int>()
-            var maps = mutableMapOf<Char, Int>()
+        private fun minWindow(s: String, t: String): String {
+            val mapt = mutableMapOf<Char, Int>()
+            val maps = mutableMapOf<Char, Int>()
             for (c in t) {
                 mapt[c] = mapt.getOrDefault(c, 0) + 1
             }
-            var tl = mapt.size
+            val tl = mapt.size
             var sl = 0
             var l = 0
             var r = 0

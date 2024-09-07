@@ -1,4 +1,4 @@
-package com.company.leetcode.kotlin.arrays.medium
+package com.company.leetcode.kotlin.arrayandstrings.medium
 
 import java.lang.StringBuilder
 

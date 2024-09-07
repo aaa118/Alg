@@ -1,4 +1,4 @@
-package com.company.leetcode.kotlin.medium.backtrack
+package com.company.leetcode.kotlin.backtrack.medium
 
 import java.util.*
 

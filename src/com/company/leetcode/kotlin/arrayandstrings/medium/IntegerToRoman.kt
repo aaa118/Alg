@@ -9,6 +9,13 @@ class IntegerToRoman {
         @JvmStatic
         fun main(args: Array<String>) {
             println(intToRoman(3749))
+            var wordList = mutableListOf("123", "456", "789")
+
+            var words = wordList.toMutableSet()
+            words.remove("123")
+            println(words.size)
+
+
         }
 
         private fun intToRoman(num: Int): String {

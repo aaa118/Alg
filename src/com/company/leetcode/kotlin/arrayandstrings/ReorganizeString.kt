@@ -7,6 +7,8 @@ import kotlin.math.max
 class ReorganizeString {
     companion object {
 
+
+
     }
     fun reorganizeString(s: String): String {
         val charsCount = HashMap<Char, Int>()

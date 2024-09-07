@@ -1,6 +1,5 @@
-package com.company.leetcode.kotlin.easy
+package com.company.leetcode.kotlin.arrayandstrings.easy
 
-import java.util.*
 import kotlin.collections.ArrayDeque
 
 class ValidParentheses {
