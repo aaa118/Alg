@@ -1,5 +1,7 @@
 package com.company.leetcode.kotlin.linkedlist.medium
 
+import java.util.LinkedHashSet
+
 class LRUCache {
 
     companion object {
@@ -15,6 +17,11 @@ class LRUCache {
             println(cache.get(1))
             println(cache.get(3))
             println(cache.get(4))
+            var cache1 = mutableMapOf<Int, Pair<Int, Int>>()
+            var frequencies = mutableMapOf<Int, LinkedHashSet<Int>>()
+            frequencies.putIfAbsent(1, LinkedHashSet<Int>())
+            frequencies.getOrDefault(1, LinkedHashSet<Int>()).apply { add(1) }
+
         }
     }
 
@@ -127,5 +134,20 @@ class LRUCache {
                 size--
             }
         }
+    }
+
+    /**
+     * With LinkedHashMap
+     */
+    class LRUCacheImpl2(val capacity: Int) {
+        private val map = LinkedHashMap<Int, Int>(capacity * 2, 0.75f, true)
+
+        fun get(key: Int) = map.getOrDefault(key, -1)
+
+        fun put(key: Int, value: Int) {
+            if (!map.containsKey(key) && map.size >= capacity) map.remove(map.keys.first())
+            map[key] = value
+        }
+
     }
 }
