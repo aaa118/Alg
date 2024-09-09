@@ -31,7 +31,6 @@ class LFUCache {
 
             private fun increaseFrequency(key: Int, value: Int, currentFrequency: Int) {
                 frequencyToValues.computeIfAbsent(currentFrequency + 1) { LinkedHashSet() }.add(key)
-                frequencyToValues.getOrDefault(currentFrequency + 1, LinkedHashSet()).add(key)
                 keyToValueFreq[key] = value to currentFrequency + 1
                 frequencyToValues[currentFrequency]?.remove(key)
                 if ((frequencyToValues[currentFrequency]?.size ?: 0) == 0) {
@@ -59,7 +58,7 @@ class LFUCache {
                             frequencyToValues.remove(minFrequency)
                         }
                     }
-                    frequencyToValues.computeIfAbsent(1) { LinkedHashSet() }.add(key)
+                    frequencyToValues.computeIfAbsent(1, { LinkedHashSet() } ).add(key)
                     minFrequency = 1
                     keyToValueFreq[key] = value to 1
                 }
