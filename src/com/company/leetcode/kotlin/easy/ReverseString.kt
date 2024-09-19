@@ -5,7 +5,7 @@ class ReverseString {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            val s = charArrayOf('h', 'e', 'l', 'l', 'o')
+         g<   val s = charArrayOf('h', 'e', 'l', 'l', 'o')
 //            s.reverse()
             reverseString(s)
             println(s)

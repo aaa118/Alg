@@ -1,6 +1,7 @@
 package com.company.leetcode.kotlin.medium
 
 import java.util.*
+import kotlin.math.min
 
 class DailyTemperatures {
 
@@ -19,7 +20,16 @@ class DailyTemperatures {
 
             println(dailyTemperatures1(nums).asList())
         }
-
+        fun uncommonFromSentences(s1: String, s2: String): Array<String> {
+            var count = mutableMapOf<String, Int>()
+            for (word in s1.split(" ")) count[word] = count.getOrDefault(word, 0) + 1
+            for (word in s2.split(" ")) count[word] = count.getOrDefault(word, 0) + 1
+            var ans = LinkedList<String>()
+            for (word in count.keys) {
+                if (count[word] == 1) ans.add(word)
+            }
+            return ans.toArray(arrayOf<String>())
+        }
         private fun dailyTemperatures(temperatures: IntArray): IntArray {
             if (temperatures.size == 1) return intArrayOf(0)
             val stack = Stack<Int>()
