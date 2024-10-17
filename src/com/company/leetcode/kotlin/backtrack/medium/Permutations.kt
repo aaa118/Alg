@@ -9,9 +9,9 @@ class Permutations {
             println(permute(array))
 
         }
-        fun permute(nums: IntArray): List<List<Int>> {
-            var res = mutableListOf<List<Int>>()
-            var used = mutableSetOf<Int>()
+        private fun permute(nums: IntArray): List<List<Int>> {
+            val res = mutableListOf<List<Int>>()
+            val used = mutableSetOf<Int>()
             fun backTrack(used: MutableSet<Int>) {
                 if (nums.size == used.size) {
                     res.add(used.toList())
