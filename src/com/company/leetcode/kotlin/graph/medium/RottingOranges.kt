@@ -1,4 +1,4 @@
-package com.company.leetcode.kotlin.medium.graph
+package com.company.leetcode.kotlin.graph.medium
 
 class RottingOranges {
 

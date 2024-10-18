@@ -1,4 +1,4 @@
-package com.company.leetcode.kotlin.easy
+package com.company.leetcode.kotlin.linkedlist.easy
 
 class ReverseLinkedList {
 
